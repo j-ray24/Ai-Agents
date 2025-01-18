@@ -4,14 +4,14 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 const HelpWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Array<{ text: string; isUser: boolean }>>([
-    { text: "Hi! I'm Alex, your Customer Service Specialist. How can I help you today?", isUser: false }
+    { text: "Hi! I'm Max, your Operations Specialist. How can I help you today?", isUser: false }
   ]);
   const [inputText, setInputText] = useState('');
 
   const handleSend = () => {
     if (inputText.trim()) {
       setMessages([...messages, { text: inputText, isUser: true }]);
-      // Simulate Alex's response - in a real app, this would call your backend
+      // Simulate Max's response - in a real app, this would call your backend
       setTimeout(() => {
         setMessages(prev => [...prev, {
           text: "Thanks for your message! I'm analyzing your question and will help you find the best solution.",
@@ -36,8 +36,8 @@ const HelpWidget: React.FC = () => {
             className="bg-white rounded-full p-0 shadow-lg hover:shadow-xl transition-all"
           >
             <img
-              src="/avatars/alex.svg"
-              alt="Chat with Alex"
+              src="/agents/demo-max.svg"
+              alt="Chat with Max"
               className="w-16 h-16 rounded-full object-cover"
             />
           </button>
@@ -48,13 +48,13 @@ const HelpWidget: React.FC = () => {
           <div className="flex items-center justify-between p-4 border-b">
             <div className="flex items-center space-x-3">
               <img
-                src="/avatars/alex.svg"
-                alt="Alex"
+                src="/agents/demo-max.svg"
+                alt="Max"
                 className="w-8 h-8 rounded-full object-cover"
               />
               <div>
-                <h3 className="font-semibold text-gray-900">Alex</h3>
-                <p className="text-sm text-gray-500">Customer Service Specialist</p>
+                <h3 className="font-semibold text-gray-900">Max</h3>
+                <p className="text-sm text-gray-500">Operations Specialist</p>
               </div>
             </div>
             <button
